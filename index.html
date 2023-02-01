@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Lab#5 legal age checker</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-color: #333;
+            color: #fff;
+            font-family: Arial, sans-serif;
+            height: 100vh;
+        }
+        
+        input[type="text"],
+        button {
+            font-size: 20px;
+            padding: 10px 20px;
+        }
+        
+        #output {
+            margin-top: 20px;
+            font-size: 18px;
+        }
+        
+        .looping-statements {
+            margin-top: 100px;
+            font-size: 18px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        .looping-statements li {
+            margin-top: 20px;
+            margin-left: 40px;
+            padding-right: 20px;
+            list-style-type: none;
+            text-align: center;
+            display: flex;
+            justify-content: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <h1>If-Else Activity:</h1><br>
+        <h1>Display UNDERAGE or LEGAL AGE:</h1>
+        <input type="text" id="ageInput">
+        <button id="checkAgeBtn">CHECK</button>
+        <p id="output"></p>
+    </div>
+    <ol class="looping-statements">
+        <h2>Do While Looping Statements:</h2>
+        <script>
+            let i = 1;
+            do {
+                document.write(`<li>${i} &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ${i * 5}</li>`);
+                i++;
+            } while (i <= 5);
+
+            document.querySelector("#checkAgeBtn").addEventListener("click", function() {
+                let age = document.querySelector("#ageInput").value;
+                if (age >= 18) {
+                    document.querySelector("#output").innerHTML = "LEGAL AGE";
+                } else {
+                    document.querySelector("#output").innerHTML = "UNDERAGE";
+                }
+            });
+        </script>
+    </ol>
+</body>
+
+</html>
